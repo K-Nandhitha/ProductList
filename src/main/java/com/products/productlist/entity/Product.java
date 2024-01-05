@@ -1,4 +1,4 @@
-package com.products.productlist;
+package com.products.productlist.entity;
 
 import jakarta.persistence.*;
 //import jakarta.persistence.GeneratedValue;
@@ -10,13 +10,20 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @Data
+@Table(name = "products")
 public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long productId;
+
+    @Column(name = "product_name")
     private String productName;
+
+    @Column(name = "stock")
     private int stock;
+
+    @Column(name = "availability")
     private boolean availability;
 
     // Getters and Setters

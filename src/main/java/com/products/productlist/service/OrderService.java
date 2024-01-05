@@ -1,6 +1,8 @@
-package com.products.productlist;
+package com.products.productlist.service;
 
 
+import com.products.productlist.entity.Order;
+import com.products.productlist.repository.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

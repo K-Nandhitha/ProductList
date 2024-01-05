@@ -1,5 +1,7 @@
-package com.products.productlist;
+package com.products.productlist.service;
 
+import com.products.productlist.entity.Items;
+import com.products.productlist.repository.ItemsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,9 +15,6 @@ public class ItemsService {
         return itemsRepository.findAll();
     }
 
-//    public Items createItem(Items items) {
-//        return itemsRepository.save(items);
-//    }
     public Items createItem(Items items) {
     // Check if itemsRepository is not null before using it
          if (itemsRepository != null) {

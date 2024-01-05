@@ -1,10 +1,13 @@
-package com.products.productlist;
+package com.products.productlist.controller;
 
+import com.products.productlist.service.util.CsvDataService;
+import com.products.productlist.entity.Product;
+import com.products.productlist.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/products")
@@ -12,6 +15,15 @@ public class ProductController {
 
     @Autowired
     private ProductService productService;
+
+    @Autowired
+    private CsvDataService csvDataService;
+
+    @PostMapping("/u")
+    public ResponseEntity<String> uploadCsvData() {
+        csvDataService.saveDataFromCsv();
+        return ResponseEntity.ok("CSV data uploaded and saved to the database.");
+    }
 
     @GetMapping
     public List<Product> getAllProducts() {
