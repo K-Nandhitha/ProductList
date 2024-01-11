@@ -1,4 +1,4 @@
-package com.products.productlist.entity;
+package com.products.productlist.entity;//package com.products.productlist.entity;
 
 import jakarta.persistence.*;
 //import jakarta.persistence.GeneratedValue;
@@ -11,6 +11,7 @@ import lombok.NoArgsConstructor;
 @Entity
 @Data
 @Table(name = "products")
+@NoArgsConstructor
 public class Product {
 
     @Id
@@ -32,3 +33,4 @@ public class Product {
 
     // Additional methods if needed
 }
+
