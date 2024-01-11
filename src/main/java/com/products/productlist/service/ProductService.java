@@ -35,10 +35,13 @@ public class ProductService {
         return productRepository.findAll();
     }
 
+    //Pagination
     public List<Product> getProducts(int page, int size) {
         PageRequest pageable = PageRequest.of(page, size);
         return productRepository.findAll(pageable).stream().toList();
     }
+
+    //Criteria Builder
     public List<Product> searchProducts(String productName, boolean availability) {
 
         CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
